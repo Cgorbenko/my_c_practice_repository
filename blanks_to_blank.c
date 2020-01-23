@@ -35,5 +35,20 @@ int main()
     
 		}
 		putchar(c);
+	}
 }
+
+int main()
+{
+	inc c;
+	while ((c = getchar()) != EOF)
+	{
+		if (c == ' ')
+		{
+			while ((c = getchat()) == ' ');
+			putchar(' ');
+			if (c == EOF) break;
+		}
+		putchar(c);
+	}
 }

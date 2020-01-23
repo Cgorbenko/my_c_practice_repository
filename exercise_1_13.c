@@ -10,3 +10,11 @@ int main()
 		else
 			putchar('*');
 }
+
+
+
+
+#include <stdio.h>
+int main()
+{
+	int 

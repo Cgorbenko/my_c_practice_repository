@@ -24,11 +24,11 @@ int main(void)
 		if (!why)
 		{
 			char * w = (char *) malloc(sizeof(char) * size * 2); 
-			for (int i =0; i < size; i++)
-				w[i] = line[i]; //THIS LINE HAS NO USE. CHANGE IT
-						//SHOULD i MAKE THIS INSTEAD BE A GETCHAR METHOD
-						//SO i CAN INSERT THE CHARACTER INTO W[i]
-			len = size; 
+			//int i = len;
+			int i = 0;
+			for (i; i < size; i++)
+				w[i] = line[i];
+			len = size  - 1; 
 			size = size * 2;
 			free(line);
 			line = w;
@@ -46,8 +46,7 @@ int main(void)
 
 		if (why) // MY code breaks somewhere in this loop. If I print line it prints it
 			// and never stops. I'm not sure what's wrong yet. 
-		{
-			printf("%s", line);
+		{	
 			len = get_length(line);
 			if (len == 0)   // I put the why == 5, so this line is never reached. 
 					// I am not sure what to do with this line to make it 
@@ -76,11 +75,10 @@ int mgetline(char s[],int lim, int i)
 	//why is why true
 	//when len is 0 why is true
         int c;
-        for (i; i < lim-1 && (c=getchar())!=EOF && c!='\n'; ++i){
-		
-                s[i] = c;} // what is the point of this line? I don't return s[] ever, so
-       				// so why even have it then? I change s[i] to make an array
-				// but it seems kinda useless if I never return it. 	
+        for (i; i < lim-1 && (c=getchar())!=EOF && c!='\n'; i++) //why is it lim - 1
+	{	
+                s[i] = c;
+	}
         if (c == '\n') 
 	{
                 s[i] = c;
